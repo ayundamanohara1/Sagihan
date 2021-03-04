@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Clickjacking Explained - The victim thinks they are clicking on. - Sagihan</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="The clickjacking attack allows an evil page to click on a victim site on behalf of the visitor.">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Sagihan" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Sagihan</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+	
+    <script data-cfasync="false">
+    var _avp = _avp || [];
+    (function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript'; s.async = true; s.src = window.location.protocol + '//adserver.adreactor.com/js/libcode3.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+    })();
+    </script>
+    
+	
+	    
+    <script>
+    if (!document.cookie || document.cookie.indexOf('AVPWCAP=') == -1) {
+    _avp.push({ alias: '/', type: 'window', zid: 23, pid: 8697 });
+    }
+    </script>
+    
+	
+<script>(function(a,b,c){Object.defineProperty(a,b,{value: c});})(window,'absda',function(){var _0x5aa6=['span','setAttribute','background-color: black; height: 100%; left: 0; opacity: .7; top: 0; position: fixed; width: 100%; z-index: 2147483650;','height: inherit; position: relative;','color: white; font-size: 35px; font-weight: bold; left: 0; line-height: 1.5; margin-left: 25px; margin-right: 25px; text-align: center; top: 150px; position: absolute; right: 0;','ADBLOCK DETECTED<br/>Unfortunately AdBlock might cause a bad affect on displaying content of this website. Please, deactivate it.','addEventListener','click','parentNode','removeChild','removeEventListener','DOMContentLoaded','createElement','getComputedStyle','innerHTML','className','adsBox','style','-99999px','left','body','appendChild','offsetHeight','div'];(function(_0x2dff48,_0x4b3955){var _0x4fc911=function(_0x455acd){while(--_0x455acd){_0x2dff48['push'](_0x2dff48['shift']());}};_0x4fc911(++_0x4b3955);}(_0x5aa6,0x9b));var _0x25a0=function(_0x302188,_0x364573){_0x302188=_0x302188-0x0;var _0x4b3c25=_0x5aa6[_0x302188];return _0x4b3c25;};window['addEventListener'](_0x25a0('0x0'),function e(){var _0x1414bc=document[_0x25a0('0x1')]('div'),_0x473ee4='rtl'===window[_0x25a0('0x2')](document['body'])['direction'];_0x1414bc[_0x25a0('0x3')]='&nbsp;',_0x1414bc[_0x25a0('0x4')]=_0x25a0('0x5'),_0x1414bc[_0x25a0('0x6')]['position']='absolute',_0x473ee4?_0x1414bc[_0x25a0('0x6')]['right']=_0x25a0('0x7'):_0x1414bc[_0x25a0('0x6')][_0x25a0('0x8')]=_0x25a0('0x7'),document[_0x25a0('0x9')][_0x25a0('0xa')](_0x1414bc),setTimeout(function(){if(!_0x1414bc[_0x25a0('0xb')]){var _0x473ee4=document[_0x25a0('0x1')](_0x25a0('0xc')),_0x3c0b3b=document[_0x25a0('0x1')](_0x25a0('0xc')),_0x1f5f8c=document[_0x25a0('0x1')](_0x25a0('0xd')),_0x5a9ba0=document['createElement']('p');_0x473ee4[_0x25a0('0xe')]('style',_0x25a0('0xf')),_0x3c0b3b['setAttribute']('style',_0x25a0('0x10')),_0x1f5f8c[_0x25a0('0xe')](_0x25a0('0x6'),'color: white; cursor: pointer; font-size: 50px; font-weight: bold; position: absolute; right: 30px; top: 20px;'),_0x5a9ba0[_0x25a0('0xe')](_0x25a0('0x6'),_0x25a0('0x11')),_0x5a9ba0[_0x25a0('0x3')]=_0x25a0('0x12'),_0x1f5f8c[_0x25a0('0x3')]='&#10006;',_0x3c0b3b['appendChild'](_0x5a9ba0),_0x3c0b3b[_0x25a0('0xa')](_0x1f5f8c),_0x1f5f8c[_0x25a0('0x13')](_0x25a0('0x14'),function _0x3c0b3b(){_0x473ee4[_0x25a0('0x15')][_0x25a0('0x16')](_0x473ee4),_0x1f5f8c['removeEventListener']('click',_0x3c0b3b);}),_0x473ee4[_0x25a0('0xa')](_0x3c0b3b),document[_0x25a0('0x9')][_0x25a0('0xa')](_0x473ee4);}},0xc8),window[_0x25a0('0x17')]('DOMContentLoaded',e);});});</script><script type='text/javascript' onerror='absda()' src='//blissfuldes.com/41/6c/2e/416c2e838ffd0ebdc5c06cfa83cc5244.js'></script>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Clickjacking Explained - The victim thinks they are clicking on.</h1>
+			
+		</header><div class="content post__content clearfix">
+			
+<p>Clickjacking Explained : Learn how it can harm your business and how to mitigate it.</p>	
+	
+		<section>
+    <aside> 
+        <a href="https://dpsvdv74uwwos.cloudfront.net/statics/img/blogposts/clickjacking_attack_example.png"><img alt="Http Security Headers And How They Work Whitepaper Netsparker Firefox, with noscript defeats &#039;clickjack&#039;. http security headers and how they work" src="https://dpsvdv74uwwos.cloudfront.net/statics/img/blogposts/clickjacking_attack_example.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fpjz78KuIMWmwLljYOoAEbGFcfw50_ycaA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 1492x740 px</li> 
+    <mark>Http Security Headers And How They Work Whitepaper Netsparker </mark> - Clickjacking is typically implemented on the site by creating hidden elements that interact with social networks.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://www.troyhunt.com/content/images/2016/02/31433142image6.png"><img alt="Troy Hunt Clickjack Attack The Hidden Threat Right In Front Of You Here&#039;s what you need to know about clickjacking, including what it is, where you&#039;ll see it, and how to protect yourself against it. clickjack attack the hidden threat" src="https://www.troyhunt.com/content/images/2016/02/31433142image6.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShXTmJT6eV-lTXJW3aW556degXZWh-tcat-w&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 518x428 px</li> 
+    <mark>Troy Hunt Clickjack Attack The Hidden Threat Right In Front Of You </mark> - This involves the injection of trojan horse code into the source code for.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://static1.makeuseofimages.com/wp-content/uploads/2016/05/clickjacking.jpg"><img alt="Clickjacking What Is It And How Can You Avoid It Please note that the below explained tutorial is solely for educational purpose and can lead to your adsense using this technique will lead to adsense ban. clickjacking what is it and how can" src="https://static1.makeuseofimages.com/wp-content/uploads/2016/05/clickjacking.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyJzFYXJDCctsPGZFKNuZnyJDNgRcfFRdG7Q&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 1680x840 px</li> 
+    <mark>Clickjacking What Is It And How Can You Avoid It </mark> - In this section we will explain what clickjacking is, describe common examples of clickjacking attacks and discuss how to protect against these attacks.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/images/Clickjacking_description.png"><img alt="Wstg V4 1 Owasp Click jacking (step by step explained). wstg v4 1 owasp" src="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/images/Clickjacking_description.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUAepkGB-_kTmBpU49F1iNqa_jjTEMhh1YXA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 800x600 px</li> 
+    <mark>Wstg V4 1 Owasp </mark> - Clickjacking is difficult to detect and potentially devastating.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://d37oebn0w9ir6a.cloudfront.net/account_5336/ScreenShot2018-10-26at8_07_22PM_df07c63569c16d89bc32aea0ecd93480.png"><img alt="How To Prevent Clickjacking In Php Step By Step Process Clickjacking on the main website for the owasp foundation. how to prevent clickjacking in php" src="https://d37oebn0w9ir6a.cloudfront.net/account_5336/ScreenShot2018-10-26at8_07_22PM_df07c63569c16d89bc32aea0ecd93480.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqnz7SDAZSUBeKT1xMqW4vC-cW3r9zeqGSeQ&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 750x468 px</li> 
+    <mark>How To Prevent Clickjacking In Php Step By Step Process </mark> - Clickjacking is also called a ui redress attack.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i.ytimg.com/vi/Pdc5KJfOQpI/maxresdefault.jpg"><img alt="What Is Clickjacking Youtube Explained in relatively easy terms here: what is clickjacking" src="https://i.ytimg.com/vi/Pdc5KJfOQpI/maxresdefault.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMFI1UzjdO2800Fjy5xz3xRPlSZdA1psJXkA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 1280x720 px</li> 
+    <mark>What Is Clickjacking Youtube </mark> - Clickjacking is also called a ui redress attack.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="http://3.bp.blogspot.com/-42LMW5_hC0Q/TeM0lEs3bqI/AAAAAAAAASE/e0rpKoGtlG0/s1600/poc1.JPG"><img alt="Secure Belief Csrf Protection Bypass With Xss In Google Code Many sites were hacked this way, including twitter, facebook, paypal and other sites. secure belief" src="http://3.bp.blogspot.com/-42LMW5_hC0Q/TeM0lEs3bqI/AAAAAAAAASE/e0rpKoGtlG0/s1600/poc1.JPG" width="100%" onerror="this.onerror=null;this.src='http://3.bp.blogspot.com/-42LMW5_hC0Q/TeM0lEs3bqI/AAAAAAAAASE/e0rpKoGtlG0/s1600/poc1.JPG';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 976x392 px</li> 
+    <mark>Secure Belief Csrf Protection Bypass With Xss In Google Code </mark> - Meaning of ipo, definition of clickjacking on the economic times.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i2.wp.com/i1-news.softpedia-static.com/images/fitted/620x/eu-cookie-law-notification-abused-to-hijack-clicks-for-invisible-ads-498601-3.jpg"><img alt="Eu Cookie Law Notification Abused To Hijack Clicks For Invisible Ads Cyber Security Clickjacking attacks are an emerging threat on the web. eu cookie law notification abused to" src="https://i2.wp.com/i1-news.softpedia-static.com/images/fitted/620x/eu-cookie-law-notification-abused-to-hijack-clicks-for-invisible-ads-498601-3.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kQ4uV_Wl-3gk63TOK9GD1sW4qLktkAxMog&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 620x356 px</li> 
+    <mark>Eu Cookie Law Notification Abused To Hijack Clicks For Invisible Ads Cyber Security </mark> - As a rule, elements are placed on top of buttons, forms, videos, and so on.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://cdn.comparitech.com/wp-content/uploads/2020/12/What-is-Clickjacking-and-what-can-you-do-to-prevent-it.jpg"><img alt="What Is A Clickjacking Attack With Examples How To Prevent It Explained in relatively easy terms here: what is a clickjacking attack with" src="https://cdn.comparitech.com/wp-content/uploads/2020/12/What-is-Clickjacking-and-what-can-you-do-to-prevent-it.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnpv-tBa_7wEN9Ja04ePk2O8RLx8zD-odFng&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 1200x600 px</li> 
+    <mark>What Is A Clickjacking Attack With Examples How To Prevent It </mark> - The victim thinks they are clicking on.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i.stack.imgur.com/7Yvns.png"><img alt="Does Facebook Like Button Vulnerable To Clickjacking Stack Overflow Combine this (and the clickjacking explained in this post) with cross site request forgery, and suddenly i have a way to do something bad with your account even if you have logged out. like button vulnerable to clickjacking" src="https://i.stack.imgur.com/7Yvns.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMKhhA80BAqEORYg6-Y1Q-gAij9xAjjPXd2g&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 698x321 px</li> 
+    <mark>Does Facebook Like Button Vulnerable To Clickjacking Stack Overflow </mark> - Click jacking (step by step explained).
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i.ytimg.com/vi/JrqULuoDcWY/hqdefault.jpg"><img alt="Clickjacking Attack Tutorial Kali Linux Most Popular Entertainment News Clickjacking is difficult to detect and potentially devastating. clickjacking attack tutorial kali linux" src="https://i.ytimg.com/vi/JrqULuoDcWY/hqdefault.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnHDUb0Y85D35jP81116gEtSSYcOKCMCcCiA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 480x360 px</li> 
+    <mark>Clickjacking Attack Tutorial Kali Linux Most Popular Entertainment News </mark> - Here&#039;s what you need to know about clickjacking, including what it is, where you&#039;ll see it, and how to protect yourself against it.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i0.wp.com/gbhackers.com/wp-content/uploads/2017/03/xsss-1.png?fit=958%2C536&amp;ssl=1"><img alt="New Attack Called Xssjacking Discovered That Combined Of Clickjacking Pastejacking And Self Xss Attacks Gbhackers On Security Many sites were hacked this way, including twitter, facebook, paypal and other sites. gbhackers" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2017/03/xsss-1.png?fit=958%2C536&amp;ssl=1" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTIIz0z9Zy-puhIO6H9pAMQFhsxL4Yrb8W1w&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 958x536 px</li> 
+    <mark>New Attack Called Xssjacking Discovered That Combined Of Clickjacking Pastejacking And Self Xss Attacks Gbhackers On Security </mark> - Clickjacking is when a cybercriminal tricks a user into clicking a link that seemingly takes them one place but instead routs them to the clickjacking is also known as redressing or iframe overlay.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://assets.pcmag.com/media/images/275267-facebook-clickjacking-attack-numbered-buttons.jpg?thumb=y"><img alt="Facebook Clickjacking Attacks Recognize And Avoid Them In this section we will explain what clickjacking is, describe common examples of clickjacking attacks and discuss how to protect against these attacks. pcmag uk" src="https://assets.pcmag.com/media/images/275267-facebook-clickjacking-attack-numbered-buttons.jpg?thumb=y" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKgRCXsfXlJaDOH0UTRHucp0INjy4_dPk2LQ&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 450x271 px</li> 
+    <mark>Facebook Clickjacking Attacks Recognize And Avoid Them </mark> - This type of attack occurs when a malicious site tricks a user into clicking on a concealed element of.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://www.acunetix.com/wp-content/uploads/2019/07/howto_cj_step1.png"><img alt="Clickjacking What Is It And How To Defend Yourself Acunetix This type of attack occurs when a malicious site tricks a user into clicking on a concealed element of. clickjacking what is it and how to" src="https://www.acunetix.com/wp-content/uploads/2019/07/howto_cj_step1.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQsN4YACPJ5_rzdRJ3dzRK_pydANNetkwdA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 470x470 px</li> 
+    <mark>Clickjacking What Is It And How To Defend Yourself Acunetix </mark> - Clickjacking on the main website for the owasp foundation.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://www.researchgate.net/profile/Ubaid-Ur-Rehman/publication/261279635/figure/fig2/AS:669136816451595@1536546057518/Manifest-File-of-CSCP-Extension_Q320.jpg"><img alt="Pdf On Detection And Prevention Of Clickjacking Attack For Osns Security now clickjacking (a term coined by jeremiah grossman and robert hansen in 2008) can be understood. prevention of clickjacking attack" src="https://www.researchgate.net/profile/Ubaid-Ur-Rehman/publication/261279635/figure/fig2/AS:669136816451595@1536546057518/Manifest-File-of-CSCP-Extension_Q320.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR_Etrxn2RnHxWAdI_fwKIL2tyball1CoajA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 320x320 px</li> 
+    <mark>Pdf On Detection And Prevention Of Clickjacking Attack For Osns </mark> - This type of attack occurs when a malicious site tricks a user into clicking on a concealed element of.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://i.ytimg.com/vi/5y3IBoU4jtY/hqdefault.jpg"><img alt="Tutorial On Clickjacking Attack Youtube As a rule, elements are placed on top of buttons, forms, videos, and so on. tutorial on clickjacking attack youtube" src="https://i.ytimg.com/vi/5y3IBoU4jtY/hqdefault.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEstbrcVJzcjIw5Ijy8mU4ou750Tkpv1u_Iw&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 480x360 px</li> 
+    <mark>Tutorial On Clickjacking Attack Youtube </mark> - The clickjacking attack allows an evil page to click on a victim site on behalf of the visitor.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://portswigger.net/web-security/images/clickjacking-infographic.svg"><img alt="What Is Clickjacking Tutorial Examples Web Security Academy Clickjacking on the main website for the owasp foundation. what is clickjacking tutorial" src="https://portswigger.net/web-security/images/clickjacking-infographic.svg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHLv6Y6SHfpPW24OAHOjcfjjar0MckoLU3eg&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 781x440 px</li> 
+    <mark>What Is Clickjacking Tutorial Examples Web Security Academy </mark> - Learn how it can harm your business and how to mitigate it.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://www.pentestpartners.com/content/uploads/2013/10/iframe-page.png"><img alt="Clickjacking Explained In Detail Pen Test Partners When clicking on a friend&#039;s image it shares it in your own feed. clickjacking explained in detail pen" src="https://www.pentestpartners.com/content/uploads/2013/10/iframe-page.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0EW0nN4ecvP4-Sas5RzO5bhn2prDDP0avQ&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 589x313 px</li> 
+    <mark>Clickjacking Explained In Detail Pen Test Partners </mark> - Security now clickjacking (a term coined by jeremiah grossman and robert hansen in 2008) can be understood.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://nordvpn.com/wp-content/uploads/2020/02/Clickjacking-Social.png"><img alt="What Is Clickjacking A Simple Explanation Nordvpn In this section we will explain what clickjacking is, describe common examples of clickjacking attacks and discuss how to protect against these attacks. what is clickjacking a simple" src="https://nordvpn.com/wp-content/uploads/2020/02/Clickjacking-Social.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO5dYifS62Q9vitqG5p6-NCzDUol8YMknSgw&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 1200x628 px</li> 
+    <mark>What Is Clickjacking A Simple Explanation Nordvpn </mark> - As explained they are well hidden so.
+</figcaption>  
+    </aside>
+    <aside> 
+        <a href="https://www.troyhunt.com/content/images/2016/02/31533152image8.png"><img alt="Troy Hunt Clickjack Attack The Hidden Threat Right In Front Of You Clickjacking on the main website for the owasp foundation. clickjack attack the hidden threat" src="https://www.troyhunt.com/content/images/2016/02/31533152image8.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaxu09ZyBdsX2LmphaKzDdM734Th6qTdCMA&amp;usqp=CAU';"></a>
+ <figcaption>
+   <div align="center">
+<li>Original Resolution: 518x240 px</li> 
+    <mark>Troy Hunt Clickjack Attack The Hidden Threat Right In Front Of You </mark> - Please note that the below explained tutorial is solely for educational purpose and can lead to your adsense using this technique will lead to adsense ban.
+</figcaption>  
+    </aside>
+</section>
+		
+<h3>Random Posts</h3>
+		
+<li><a href="/posts/kode-kode-termux-hack-akun-free-fire" target="_blank">Kode Kode Termux Hack Akun Free Fire</a></li>
+		
+<li><a href="/posts/gimana-cara-hack-akun-orang" target="_blank">Gimana Cara Hack Akun Orang</a></li>
+		
+<li><a href="/posts/cara-evo-eevee-pokemon-go" target="_blank">Cara Evo Eevee Pokemon Go</a></li>
+		
+<li><a href="/posts/poro-png" target="_blank">Poro Png</a></li>
+		
+<li><a href="/posts/pijat-hidung-tersumbat-sebelah" target="_blank">Pijat Hidung Tersumbat Sebelah</a></li>
+		
+<li><a href="/posts/pas-foto-nikah" target="_blank">Pas Foto Nikah</a></li>
+		
+<li><a href="/posts/eevee-evoluzioni-pokemon-go" target="_blank">Eevee Evoluzioni Pokemon Go</a></li>
+		
+<li><a href="/posts/gambar-free-fire-orang" target="_blank">Gambar Free Fire Orang</a></li>
+		
+<li><a href="/posts/lagu-game-free-fire" target="_blank">Lagu Game Free Fire</a></li>
+		
+<li><a href="/posts/aplikasi-mencuri-akun-ff" target="_blank">Aplikasi Mencuri Akun Ff</a></li>
+		
+<li><a href="/posts/cara-bajak-akun-ff-orang-lain" target="_blank">Cara Bajak Akun Ff Orang Lain</a></li>
+		
+<li><a href="/posts/duit-cc-free-fire-gratis" target="_blank">Duit Cc Free Fire Gratis</a></li>
+		
+<li><a href="/posts/download-lagu-boy-in-luv-bts-mp3" target="_blank">Download Lagu Boy In Luv Bts Mp3</a></li>
+		
+<li><a href="/posts/cara-hack-akun-ff-sultan" target="_blank">Cara Hack Akun Ff Sultan</a></li>
+		
+<li><a href="/posts/what-is-ziplines-in-free-fire" target="_blank">What Is Ziplines In Free Fire</a></li>
+	
+<h3>Popular Posts</h3>
+		
+<li><a href="/posts/lagu-free-fire" target="_blank">Lagu Free Fire</a></li>
+		
+<li><a href="/posts/sylveon-pogo" target="_blank">Sylveon Pogo</a></li>
+		
+<li><a href="/posts/akun-free-fire-di-hack-orang" target="_blank">Akun Free Fire Di Hack Orang</a></li>
+		
+<li><a href="/posts/aplikasi-anti-lag-free-fire" target="_blank">Aplikasi Anti Lag Free Fire</a></li>
+		
+<li><a href="/posts/aplikasi-untuk-mengambil-akun-ff-orang" target="_blank">Aplikasi Untuk Mengambil Akun Ff Orang</a></li>
+		
+<li><a href="/posts/cara-ngehek-akun-sultan" target="_blank">Cara Ngehek Akun Sultan</a></li>
+		
+<li><a href="/posts/cara-hack-akun-orang-di-ff" target="_blank">Cara Hack Akun Orang Di Ff</a></li>
+		
+<li><a href="/posts/cara-ngehack-akun-orang" target="_blank">Cara Ngehack Akun Orang</a></li>
+		
+<li><a href="/posts/nama-evolusi-eevee" target="_blank">Nama Evolusi Eevee</a></li>
+		
+<li><a href="/posts/cara-ambil-akun-sultan" target="_blank">Cara Ambil Akun Sultan</a></li>
+		
+<li><a href="/posts/cara-hafal-surah-yasin" target="_blank">Cara Hafal Surah Yasin</a></li>
+		
+<li><a href="/posts/hack-termux-ff" target="_blank">Hack Termux Ff</a></li>
+		
+<li><a href="/posts/ngehack-akun-free-fire" target="_blank">Ngehack Akun Free Fire</a></li>
+		
+<li><a href="/posts/foto-hack-ff" target="_blank">Foto Hack Ff</a></li>
+		
+<li><a href="/posts/latest-png-music" target="_blank">Latest Png Music</a></li>
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://sagihan.vercel.app/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/different-eevee-evolutions-names-pokemon-go/">Different Eevee Evolutions Names Pokemon Go : In pokemon go you can actually choose which &amp;#039;eeveelution&amp;#039; it evolves into.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/ffar-class-warzone-nickmercs/">Ffar Class Warzone Nickmercs - Warzone some unique variations have been spotted.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/pokemon-go-eevee-evolve-names-gen-4/">Pokemon Go Eevee Evolve Names Gen 4 : No other pokemon has so much potential.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/pokemon-let-s-go-eevee-evolve-kadabra/">Pokemon Let&amp;#039;s Go Eevee Evolve Kadabra : Pokemon let&amp;#039;s go kadabra is a psychic type pokemon also known as a psi pokemon, first discovered in the kanto region.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/best-shiny-pokemon-let-s-go-eevee/">Best Shiny Pokemon Let&amp;#039;s Go Eevee - To better help you spot these out if the particle effect isn&amp;#039;t enough to catch your attention or maybe you just curious below we have a list of all shiny.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/cara-curi-akun-orang-di-ff/">Cara Curi Akun Orang Di Ff : Cara memindahkan akun ff dari facebook ke facebook lain gimana?</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/cara-menghack-akun-free-fire-orang/">Cara Menghack Akun Free Fire Orang : Cara mengembalikan akun yang di hack.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/dj-controller-dj-mixer-png/">Dj Controller Dj Mixer Png - Dj holding dj controller, disc jockey music dj mix mixtape, dj, electronics, audio equipment png.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/ff7-cloud-dress/">Ff7 Cloud Dress / Learn how to get and unlock all 3 of cloud&amp;#039;s dresses (clothes, outfits) in final fantasy 7 remake (ff7r, ff7 remake).</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/ff7-remake-characters-female/">Ff7 Remake Characters Female - Ff7 remake guide &amp;amp; walkthrough wiki.</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Sagihan.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21862896-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21862896-2');
+</script>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
